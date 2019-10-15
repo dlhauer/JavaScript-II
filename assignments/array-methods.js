@@ -57,29 +57,45 @@ const runners = [
 
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
-let fullNames = [];
+let fullNames = []
+runners.forEach( item => fullNames.push( `${item.first_name} ${item.last_name}`));
 console.log(fullNames);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
-let firstNamesAllCaps = [];
+let firstNamesAllCaps = runners.map( item => item.first_name.toUpperCase() );
 console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
-let runnersLargeSizeShirt = [];
+let runnersLargeSizeShirt = runners.filter(item => item.shirt_size === 'L');
 console.log(runnersLargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
-let ticketPriceTotal = 0;
+let ticketPriceTotal = runners.reduce( (total, item) => total += item.donation, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+/* The director despises academics. Create an array called [blacklist] consisting of anyone with a '.edu' email address, so the director can be sure to take their money, but exclude them from any events at the center. */
+
+let blacklist = runners.filter( item => item.email.includes('.edu') )
+console.log(blacklist);
 
 // Problem 2
 
+/* When the new director (that is, the one who replaces the anti-academic jerk mentioned above) holds a thank-you event for everyone who donated, she wants to be able to greet them all by first name in one breath, like "Good evening charmainewhitakerjuliettamartynne ..." (you get the idea). Join all of the first names into one string, all in lower-case type. */
+
+let greetString = runners.map( item => item.first_name.toLowerCase() ).join('');
+// let greetString = greetArray.join('');
+console.log(greetString);
+
 // Problem 3
+
+/* For tax purposes, the organization needs to know the average length of the benefactors' first names. Hop to it. */
+
+let avgNameLength = runners.reduce( (total, item) => total += item.first_name.length, 0 ) / runners.length;
+console.log(avgNameLength);
