@@ -87,7 +87,7 @@ console.log(blacklist);
 
 // Problem 2
 
-/* When the new director (that is, the one who replaces the anti-academic jerk mentioned above) holds a thank-you event for everyone who donated, she wants to be able to greet them all by first name in one breath, like "Good evening charmainewhitakerjuliettamartynne ..." (you get the idea). Join all of the first names into one string, all in lower-case type. */
+/* When the new director (that is, the one who replaced the anti-academic jerk mentioned above) holds a thank-you event for everyone who donated, she wants to be able to greet them all by first name in one long breath, like "Good evening charmainewhitakerjuliettamartynne ..." (you get the idea). Join all of the first names into one string, all in lower-case type. */
 
 let greetString = runners.map( item => item.first_name.toLowerCase() ).join('');
 // let greetString = greetArray.join('');
@@ -99,3 +99,4 @@ console.log(greetString);
 
 let avgNameLength = runners.reduce( (total, item) => total += item.first_name.length, 0 ) / runners.length;
 console.log(avgNameLength);
+
