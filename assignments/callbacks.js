@@ -83,4 +83,8 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb( Array.from( new Set(array) ) );
 }
+
+const newItems = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'Pencil'];
+removeDuplicates(newItems, loggy);

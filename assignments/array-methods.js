@@ -79,6 +79,8 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
+console.log('\n === Interesting array method problems begin below! === \n ');
+
 // Problem 1
 /* The director despises academics. Create an array called [blacklist] consisting of anyone with a '.edu' email address, so the director can be sure to take their money, but exclude them from any events at the center. */
 
@@ -100,3 +102,11 @@ console.log(greetString);
 let avgNameLength = runners.reduce( (total, item) => total += item.first_name.length, 0 ) / runners.length;
 console.log(avgNameLength);
 
+// Problem 4
+
+/* The director loves anyone whose first name and last name begin with the same letter. Find those people, and include their entire object in an array. */
+
+let magicNames = runners.filter( item => item.first_name[0] === item.last_name[0]);
+console.log(magicNames);
+
+console.log('\n === Interesting array method problems are over. :( === \n ');
